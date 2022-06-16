@@ -11,12 +11,14 @@ interface Fruit {
 }
 const FruitCard: React.VFC<Fruit> = (props) => {
   return (
-    <div>
+    <div className="border-2 border-slate-300 rounded-md hover:outline hover:outline-slate-300 hover:outline-2 shadow-lg hover:shadow-xl transition ease-in-out duration-100 hover:scale-105 hover:cursor-pointer p-10">
       <div>
-        <img src={props.imgUrl} alt="fruit" />
+        <div className="mb-12 border">
+          <img src={props.imgUrl} alt="fruit" className="h-32 m-auto" />
+        </div>
         <div>
-          <strong>{props.title}</strong>
-          <p>Calorie: {props.calorie} kcal/ 100g</p>
+          <p className="mb-6 font-bold">{props.title}</p>
+          <p className="mb-6">Calorie: {props.calorie} kcal/ 100g</p>
           <p>
             Macro: P {props.macro.protein}g F {props.macro.fat}g C
             {props.macro.carbonhydrate}g
